@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+skin rose
+
+class Libro{
+ISBN
+Titulo
+Autor
+Categoria
+Copias
+Precio
+}
+
+class Socio{
+Nombre
+Edad
+Email
+}
+
+Socio "1" --> "1..5"Libro: recibe
+@enduml

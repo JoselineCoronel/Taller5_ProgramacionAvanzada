@@ -1,0 +1,43 @@
+@startuml
+left to right direction
+skin rose
+
+class Libro{
+-isbn: String
+-titulo: String
+-autor: String
+-categoria: String
+-copias: int
+-precio: int
++libro(isbn: String, titulo: String, autor: String, categoria: String ,
+copias: int, precio: int)
++get's y set's()
+}
+
+class User{
+-name: String
+-age: int
+-email: String
+
++User(name: String, age: int, email: String)
++get's y set's()
+}
+
+
+class SystemImpl{
++SystemImpl()
+
+}
+
+Interface ISystem{
++startProgram(): void
+
+}
+
+User"1" --> "1..*"Libro: recibe
+SystemImpl"1"-->"1"User
+SystemImpl"1"-->"1"Libro
+SystemImpl ..> ISystem: implements
+
+
+@enduml
